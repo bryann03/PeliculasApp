@@ -1,3 +1,5 @@
+import { Movie } from './../../interfaces/Cartelera';
+import { PeliculasService } from './../../services/peliculas.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public movies: Movie[] = [];
+
+  constructor(private peliculaService: PeliculasService) { }
 
   ngOnInit(): void {
+    this.peliculaService.getCartelera()
+      .subscribe(resp => {
+        // console.log(resp.results);
+        this.movies = resp.results;
+      })
   }
 
 }

@@ -9,10 +9,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'PeliculasApp';
 
-  constructor( private peliculasService: PeliculasService ){
-    this.peliculasService.getCartelera()
-        .subscribe(resp => {
-          console.log(resp);
-        })
-  }
 }
