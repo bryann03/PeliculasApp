@@ -29,6 +29,7 @@ export class SlideshowComponent implements OnInit, AfterViewInit {
 
    onSlidePrev(){
       this.mySwiper.slidePrev();
+      this.mySwiper.slidePrev();
    }
 
    onSlideNext(){
