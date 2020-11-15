@@ -17,7 +17,6 @@ export class SlideshowComponent implements OnInit, AfterViewInit {
 
    ngOnInit(): void {
       console.log(this.movies[0]);
-      console.log(this.movies[0]);
    }
 
    ngAfterViewInit() {
@@ -30,11 +29,9 @@ export class SlideshowComponent implements OnInit, AfterViewInit {
 
    onSlidePrev(){
       this.mySwiper.slidePrev();
-      this.mySwiper.slidePrev();
    }
 
    onSlideNext(){
-      this.mySwiper.slideNext();
       this.mySwiper.slideNext();
    }
 
