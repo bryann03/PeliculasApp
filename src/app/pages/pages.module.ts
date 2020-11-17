@@ -6,14 +6,14 @@ import { BuscarComponent } from './buscar/buscar.component';
 import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    PeliculaComponent,
-    BuscarComponent
-  ],
-  imports: [
-    CommonModule,
-    ComponentsModule
-  ]
+   declarations: [
+      HomeComponent,
+      PeliculaComponent,
+      BuscarComponent
+   ],
+   imports: [
+      CommonModule,
+      ComponentsModule
+   ]
 })
 export class PagesModule { }
