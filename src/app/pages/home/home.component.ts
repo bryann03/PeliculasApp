@@ -22,10 +22,13 @@ export class HomeComponent implements OnInit {
 
       //SI SUPERA EL SCROLL MÁXIMO, LLAMAMOS AL SERVICIO Y TRAEMOS MAS PELÍCULAS
       if( pos > max - 200 ){
-         this.peliculaService.getCartelera()
-            .subscribe((resp => {
-               this.movies.push(...resp.results);
-            }))
+         //CONTROLAMOS QUE NO HAGA TANTAS PETICIONES A LA API AL HACER EL SCROLL INFINITO
+         if(!this.peliculaService.cargando){
+            this.peliculaService.getCartelera()
+               .subscribe((resp => {
+                  this.movies.push(...resp);
+               }))
+         }
       }
    }
 
@@ -35,8 +38,8 @@ export class HomeComponent implements OnInit {
       this.peliculaService.getCartelera()
          .subscribe(resp => {
             // console.log(resp.results);
-            this.moviesSlideShow = resp.results;
-            this.movies = resp.results;
+            this.moviesSlideShow = resp;
+            this.movies = resp;
          })
    }
 

@@ -1,3 +1,5 @@
+import { PipesModule } from './../pipes/pipes.module';
+import { PosterPipe } from './../pipes/poster.pipe';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -20,7 +22,8 @@ import { RatingModule } from 'ng-starrating';
    imports: [
       CommonModule,
       RouterModule,
-      RatingModule
+      RatingModule,
+      PipesModule
    ]
 })
 export class ComponentsModule { }
