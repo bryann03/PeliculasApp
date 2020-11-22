@@ -1,3 +1,4 @@
+import { Movie } from './../../interfaces/Cartelera';
 import { PeliculasService } from './../../services/peliculas.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -9,15 +10,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BuscarComponent implements OnInit {
 
+   protected valorBuscado: string;
+   protected movies: Movie[] = [];
+
    constructor(private activatedRoute: ActivatedRoute,
-               private peliculasService: PeliculasService) { }
+      private peliculasService: PeliculasService) { }
 
    ngOnInit(): void {
       this.activatedRoute.params.subscribe(params => {
-         console.log(params.texto);
+         this.valorBuscado = params.texto;
          this.peliculasService.buscarPeliculas(params.texto)
-            .subscribe((movies => {
-               console.log(movies[0].title);
+            .subscribe((moviesResult => {
+               this.movies = moviesResult
             }))
       })
    }
