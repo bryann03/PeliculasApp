@@ -13,8 +13,8 @@ import { combineLatest } from 'rxjs/operators';
 })
 export class PeliculaComponent implements OnInit {
 
-   protected movie: MovieDetails;
-   protected cast: CastElement[] = [];
+   movie: MovieDetails;
+   cast: CastElement[] = [];
 
    constructor(private activatedRoute: ActivatedRoute,
       private peliculasService: PeliculasService,

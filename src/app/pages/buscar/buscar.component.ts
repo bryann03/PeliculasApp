@@ -10,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BuscarComponent implements OnInit {
 
-   protected valorBuscado: string;
-   protected movies: Movie[] = [];
+   valorBuscado: string;
+   movies: Movie[] = [];
 
    constructor(private activatedRoute: ActivatedRoute,
       private peliculasService: PeliculasService) { }
@@ -22,8 +22,8 @@ export class BuscarComponent implements OnInit {
          this.peliculasService.buscarPeliculas(params.texto)
             .subscribe((moviesResult => {
                this.movies = moviesResult
-            }))
-      })
+            }));
+      });
    }
 
 }
